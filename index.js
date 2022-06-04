@@ -51,6 +51,7 @@ if (arg === '-h' || arg === '--help') {
     console.log(`gclean@${version} - net-js`);
 } else {
     arg = ""
+    main();
 }
 
 
@@ -62,11 +63,20 @@ async function main(){
     run('git', ['branch', '-D', branch]);
     run('git', ['branch', '-m', branch]);
     run('git', ['push', '-f', 'origin', branch]);
-    console.log("Clean up complete on branch: " + branch, "\n", `
-Thanks for using gclean!
-If you have any thing problem, please contact us at github else please star our repo on github. \nhttps://github.com/net-js/glean
-With love,
-net-js - Happy Hacking!`); 
+    const t = process.uptime().toString().split(".")[0]
+    const b = (branch.length == 4)? `${branch}   ` : (branch.length == 6)? `${branch} ` : branch.substring(0, 6)
+    console.log(`
+GCLean Report:
+ ---------------------------------------------------------------------------------
+| - Clean up complete on branch: ${b}                                          |
+| - Done in just: ${t} seconds                                                       |
+|                                                                                 |
+| Thanks for using gclean!                                                        |
+| If you have any problem, please contact us else please star the repo on github. |
+| https://github.com/net-js/glean                                                 |
+|                                                                                 |
+| With love,                                                                      |
+| net-js - Happy Hacking!                                                         |
+ ---------------------------------------------------------------------------------
+`)
 }
-
-main()

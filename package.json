@@ -1,6 +1,6 @@
 {
   "name": "gclean",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clean the commit-history in just one command",
   "main": "index.js",
   "scripts": {
