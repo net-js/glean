@@ -1,0 +1,29 @@
+{
+  "name": "glean",
+  "version": "1.0.0",
+  "description": "Clean the commit-history in just one command",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/net-js/gclean.git"
+  },
+  "keywords": [
+    "clean",
+    "git",
+    "github",
+    "glean",
+    "commit-history",
+    "net-js"
+  ],
+  "author": "net-js",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/net-js/gclean/issues"
+  },
+  "homepage": "https://github.com/net-js/gclean#readme",
+  "type": "module",
+  "bin": "index.js"
+}
