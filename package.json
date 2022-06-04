@@ -1,5 +1,5 @@
 {
-  "name": "glean",
+  "name": "gclean",
   "version": "1.0.0",
   "description": "Clean the commit-history in just one command",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "net-js"
   ],
   "author": "net-js",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/net-js/gclean/issues"
   },

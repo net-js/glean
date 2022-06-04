@@ -37,15 +37,18 @@ function checkBranch() {
 
 let arg = process.argv[2];
 if (arg === '-h' || arg === '--help') {
-    let command = (checkPackageManager() === 'npm') ? 'npx glean': "yarn glean";
+    let command = (checkPackageManager() === 'npm') ? 'npx gclean': "yarn gclean";
     console.log(`
+    Clean the commit-history in just one command
     Usage: ${command};
+    If you have any thing problem, please contact us at github else please star our repo on github. \n
+    https://github.com/net-js/glean
     For version: ${command} --version;
     `)
 } else if (arg === '-v' || arg === '--version') {
     const packageFile = readFileSync('./package.json', 'utf8');
     const { version } = JSON.parse(packageFile);
-    console.log(`Glean@${version} - net-js`);
+    console.log(`gclean@${version} - net-js`);
 } else {
     arg = ""
 }
@@ -53,14 +56,14 @@ if (arg === '-h' || arg === '--help') {
 
 async function main(){
     const branch = await checkBranch();
-    run('git', ['checkout', '--orphan', 'glean']);
+    run('git', ['checkout', '--orphan', 'gclean']);
     run('git', ['add', '-A']);
-    run('git', ['commit', '-m', 'Cleaning up using npx glean']);
+    run('git', ['commit', '-m', 'Cleaning up using npx gclean']);
     run('git', ['branch', '-D', branch]);
     run('git', ['branch', '-m', branch]);
     run('git', ['push', '-f', 'origin', branch]);
     console.log("Clean up complete on branch: " + branch, "\n", `
-Thanks for using Glean!
+Thanks for using gclean!
 If you have any thing problem, please contact us at github else please star our repo on github. \nhttps://github.com/net-js/glean
 With love,
 net-js - Happy Hacking!`); 
